@@ -1,0 +1,61 @@
+=pod
+
+=head1 NAME
+
+YaIBtgWD - Yet another IRC Bot to gain World Domination
+
+=head1 SYNOPSIS
+
+IRCBot [server] [port] [channel (without '#')] [nick]
+
+=head1 DESCRIPTION
+
+YaIBtgWD is just another IRC Bot. The Bot log everything into a SQLite Database. You can enable or disable logging.
+
+=head1 OPTIONS
+
+There are no optional flags.
+
+=head1 FILES
+
+./IRCBot
+
+	The Bot
+	
+./sqlite3_db.sql
+
+	The Logging Database
+	
+./daemon.c
+
+	The Daemon Code
+	
+./daemon.h
+	
+	The Daemon Header file
+	
+./Makefile
+
+	The Makefile
+	
+=head1 ENVIRONMENT
+
+Nothing to say
+
+=head1 DIAGNOSTICS
+
+Nothing to say
+
+=head1 BUGS
+
+Nothing to say
+
+=head1 AUTHOR
+
+Pascal Koenig
+
+=head1 SEE ALSO
+
+Nothing to say
+
+=cut

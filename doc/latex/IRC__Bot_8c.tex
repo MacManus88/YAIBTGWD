@@ -1,0 +1,200 @@
+\hypertarget{IRC__Bot_8c}{\section{\-I\-R\-C\-\_\-\-Bot.\-c \-File \-Reference}
+\label{IRC__Bot_8c}\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+}
+
+
+\-The file includes the complete \-Bot, without the \-Daemon \-Function.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\*
+{\ttfamily \#include $<$netdb.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include \char`\"{}sqlite3.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{IRC__Bot_8c_a0cad2d9dd06783107d02eb1c72faf156}{\#define {\bfseries \-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E}~\char`\"{}sqlite3\-\_\-db.\-sql\char`\"{}}\label{IRC__Bot_8c_a0cad2d9dd06783107d02eb1c72faf156}
+
+\item 
+\hypertarget{IRC__Bot_8c_a6b20d41d6252e9871430c242cb1a56e7}{\#define {\bfseries \-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~1000}\label{IRC__Bot_8c_a6b20d41d6252e9871430c242cb1a56e7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{IRC__Bot_8c_a804b31416823b396a49d88d96089c4ed}{create\-\_\-table} (sqlite3 $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em \-Creating the \-Table. \end{DoxyCompactList}\item 
+void \hyperlink{IRC__Bot_8c_a01dccb70abdaeab23ce1d87d23203b6e}{zeile\-\_\-splitten\-\_\-loggen} (sqlite3 $\ast$ptr, char buffer\mbox{[}512\mbox{]})
+\begin{DoxyCompactList}\small\item\em split and log the received \-Data \end{DoxyCompactList}\item 
+void \hyperlink{IRC__Bot_8c_aa2604a1493ee881c845c801a9a27cb49}{zeile\-\_\-send\-\_\-splitten\-\_\-loggen} (sqlite3 $\ast$ptr, char buffer\mbox{[}512\mbox{]})
+\begin{DoxyCompactList}\small\item\em split and log the send \-Data \end{DoxyCompactList}\item 
+void \hyperlink{IRC__Bot_8c_ac2aeb22b1c7229c97e64bba66b454f51}{zeile\-\_\-loggen} (sqlite3 $\ast$ptr, char buffer\mbox{[}512\mbox{]})
+\begin{DoxyCompactList}\small\item\em log the \-Data without splitting \end{DoxyCompactList}\item 
+void \hyperlink{IRC__Bot_8c_aea329f6663b8d47967271979317c7b44}{config\-\_\-einlesen} (void)
+\begin{DoxyCompactList}\small\item\em \-This function reads the config \-File. \end{DoxyCompactList}\item 
+int \hyperlink{IRC__Bot_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Entering the programm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{IRC__Bot_8c_aabcfb46aa0feb4ba052db13206995639}{int {\bfseries logging} = 1}\label{IRC__Bot_8c_aabcfb46aa0feb4ba052db13206995639}
+
+\item 
+\hypertarget{IRC__Bot_8c_ab172bb9497c8d482a3aa7b32728a71cf}{char {\bfseries buf} \mbox{[}1000\mbox{]}}\label{IRC__Bot_8c_ab172bb9497c8d482a3aa7b32728a71cf}
+
+\item 
+\hypertarget{IRC__Bot_8c_a757a2453b8aebb81ae772c1f4b4357f8}{char {\bfseries tok} \mbox{[}200\mbox{]}}\label{IRC__Bot_8c_a757a2453b8aebb81ae772c1f4b4357f8}
+
+\item 
+\hypertarget{IRC__Bot_8c_a62c37b43f17f9ae688c1c5f0d89a2fe3}{char {\bfseries read\-\_\-data\-\_\-buf} \mbox{[}1000\mbox{]}}\label{IRC__Bot_8c_a62c37b43f17f9ae688c1c5f0d89a2fe3}
+
+\item 
+\hypertarget{IRC__Bot_8c_a58987a3b1bd96c38fbc8f0ad1d03f9ad}{char {\bfseries server} \mbox{[}200\mbox{]}}\label{IRC__Bot_8c_a58987a3b1bd96c38fbc8f0ad1d03f9ad}
+
+\item 
+\hypertarget{IRC__Bot_8c_a76bfae35a4a765e250bba67aded19048}{char {\bfseries port} \mbox{[}4\mbox{]}}\label{IRC__Bot_8c_a76bfae35a4a765e250bba67aded19048}
+
+\item 
+\hypertarget{IRC__Bot_8c_a494e13c97922ac330cade37efbf13fc4}{char {\bfseries channel} \mbox{[}100\mbox{]}}\label{IRC__Bot_8c_a494e13c97922ac330cade37efbf13fc4}
+
+\item 
+\hypertarget{IRC__Bot_8c_a3d6eed58a79d598b66478951caff122d}{char {\bfseries nick} \mbox{[}100\mbox{]}}\label{IRC__Bot_8c_a3d6eed58a79d598b66478951caff122d}
+
+\item 
+\hypertarget{IRC__Bot_8c_ae843db8f56a5db6a6e0931bac4d60ad2}{char {\bfseries uhrzeit} \mbox{[}99\mbox{]}}\label{IRC__Bot_8c_ae843db8f56a5db6a6e0931bac4d60ad2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The file includes the complete \-Bot, without the \-Daemon \-Function. \-In this file you can find the complete \-I\-R\-C\-\_\-\-Bot \-Code including the sqlite3 \-Code. \-This \-I\-R\-C\-\_\-\-Bot was programmed as part of the lecture \char`\"{}\-Linux Programmierung 2012\char`\"{}. \-The \-Lecturere is \-Christoph \-Hahn.
+
+\begin{DoxyAuthor}{\-Author}
+\-Pascal \-König 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+2012 
+\end{DoxyDate}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{IRC__Bot_8c_aea329f6663b8d47967271979317c7b44}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!config\-\_\-einlesen@{config\-\_\-einlesen}}
+\index{config\-\_\-einlesen@{config\-\_\-einlesen}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{config\-\_\-einlesen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf config\-\_\-einlesen} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_aea329f6663b8d47967271979317c7b44}
+
+
+\-This function reads the config \-File. 
+
+\-This function reads the \-Config \-File \char`\"{}.\-config\char`\"{} and parse the \-Data to it's variable. \hypertarget{IRC__Bot_8c_a804b31416823b396a49d88d96089c4ed}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!create\-\_\-table@{create\-\_\-table}}
+\index{create\-\_\-table@{create\-\_\-table}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{create\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf create\-\_\-table} (
+\begin{DoxyParamCaption}
+\item[{sqlite3 $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_a804b31416823b396a49d88d96089c4ed}
+
+
+\-Creating the \-Table. 
+
+\-This function creates the \-Table in the \-Database
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$ptr} & \-This is the \-Database \-Handle \\
+\hline
+\end{DoxyParams}
+\hypertarget{IRC__Bot_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!main@{main}}
+\index{main@{main}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf main} (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+\-Entering the programm. 
+
+\-The \-Program starts here.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em argc} & \-The \-Number of \-Arguments \\
+\hline
+{\em argv} & \-The \-Arguments \\
+\hline
+\end{DoxyParams}
+\hypertarget{IRC__Bot_8c_ac2aeb22b1c7229c97e64bba66b454f51}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!zeile\-\_\-loggen@{zeile\-\_\-loggen}}
+\index{zeile\-\_\-loggen@{zeile\-\_\-loggen}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{zeile\-\_\-loggen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf zeile\-\_\-loggen} (
+\begin{DoxyParamCaption}
+\item[{sqlite3 $\ast$}]{ptr, }
+\item[{char}]{buffer\mbox{[}512\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_ac2aeb22b1c7229c97e64bba66b454f51}
+
+
+log the \-Data without splitting 
+
+\-This function logs the complete \-Data without splitting in the sqlite3 \-Database. \-Only the \-Values \char`\"{}\-Uhrzeit\char`\"{} and \char`\"{}\-Nachricht\char`\"{} are used. \-The complete \-Data will be written in the \-Value \char`\"{}\-Nachricht\char`\"{}.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$ptr} & \-This is the \-Database \-Handle \\
+\hline
+{\em buffer} & \-This is the \-Data \\
+\hline
+\end{DoxyParams}
+\hypertarget{IRC__Bot_8c_aa2604a1493ee881c845c801a9a27cb49}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!zeile\-\_\-send\-\_\-splitten\-\_\-loggen@{zeile\-\_\-send\-\_\-splitten\-\_\-loggen}}
+\index{zeile\-\_\-send\-\_\-splitten\-\_\-loggen@{zeile\-\_\-send\-\_\-splitten\-\_\-loggen}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{zeile\-\_\-send\-\_\-splitten\-\_\-loggen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf zeile\-\_\-send\-\_\-splitten\-\_\-loggen} (
+\begin{DoxyParamCaption}
+\item[{sqlite3 $\ast$}]{ptr, }
+\item[{char}]{buffer\mbox{[}512\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_aa2604a1493ee881c845c801a9a27cb49}
+
+
+split and log the send \-Data 
+
+\-This function splits and logs the send \-Data in the sqlite3 \-Database.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$ptr} & \-This is the \-Database \-Handle \\
+\hline
+{\em buffer} & \-This is the send \-Data \\
+\hline
+\end{DoxyParams}
+\hypertarget{IRC__Bot_8c_a01dccb70abdaeab23ce1d87d23203b6e}{\index{\-I\-R\-C\-\_\-\-Bot.\-c@{\-I\-R\-C\-\_\-\-Bot.\-c}!zeile\-\_\-splitten\-\_\-loggen@{zeile\-\_\-splitten\-\_\-loggen}}
+\index{zeile\-\_\-splitten\-\_\-loggen@{zeile\-\_\-splitten\-\_\-loggen}!IRC_Bot.c@{\-I\-R\-C\-\_\-\-Bot.\-c}}
+\subsubsection[{zeile\-\_\-splitten\-\_\-loggen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf zeile\-\_\-splitten\-\_\-loggen} (
+\begin{DoxyParamCaption}
+\item[{sqlite3 $\ast$}]{ptr, }
+\item[{char}]{buffer\mbox{[}512\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{IRC__Bot_8c_a01dccb70abdaeab23ce1d87d23203b6e}
+
+
+split and log the received \-Data 
+
+\-This function splits and logs the received \-Data in the sqlite3 \-Database.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$ptr} & \-This is the \-Database \-Handle \\
+\hline
+{\em buffer} & \-This is the received \-Data \\
+\hline
+\end{DoxyParams}
